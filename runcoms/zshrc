@@ -10,6 +10,11 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+# append ~/.local/bin to $PATH
+if [ -d $HOME/.local/bin ]; then
+  export PATH=$HOME/.local/bin:$PATH
+fi
+
 # use peco to search command history
 # http://qiita.com/uchiko/items/f6b1528d7362c9310da0
 if (( $+commands[peco] )); then
